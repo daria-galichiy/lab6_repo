@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title1 %}<title>Main page</title>{% endblock %}
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body>
+<div id="container">
+    {% block title2 %}<div id="header"><h1>___Basic tables___</h1></div>{% endblock %}
+    <br>
+    {% block body %}
+        <div class="container">
+            <li><a href="{% url 'films_url' %}">Films</a></li>
+            <li><a href="{% url 'actors_url' %}">Actors</a></li>
+            <li><a href="{% url 'filmmakers_url' %}">Filmmakers</a></li>
+            <li><a href="{% url 'film_writers_url' %}">Film writers</a></li>
+            <li><a href="{% url 'producers_url' %}">Producers</a></li>
+            <li><a href="{% url 'cameramen_url' %}">Cameramen</a></li>
+            <li><a href="{% url 'countries_url' %}">Countries</a></li>
+        </div>
+    {% endblock %}
+</div>
+</body>
+</html>
